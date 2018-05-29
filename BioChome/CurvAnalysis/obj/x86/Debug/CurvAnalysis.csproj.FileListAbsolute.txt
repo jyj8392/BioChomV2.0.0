@@ -1,0 +1,14 @@
+F:\work\程杰\BioChomV2.0.0\BioChome\CurvAnalysis\bin\x86\Debug\CurvAnalysis.dll
+F:\work\程杰\BioChomV2.0.0\BioChome\CurvAnalysis\bin\x86\Debug\CurvAnalysis.pdb
+F:\work\程杰\BioChomV2.0.0\BioChome\CurvAnalysis\obj\x86\Debug\CurvAnalysis.csprojResolveAssemblyReference.cache
+F:\work\程杰\BioChomV2.0.0\BioChome\CurvAnalysis\obj\x86\Debug\CurvAnalysis.CurvShow.resources
+F:\work\程杰\BioChomV2.0.0\BioChome\CurvAnalysis\obj\x86\Debug\CurvAnalysis.csproj.GenerateResource.Cache
+F:\work\程杰\BioChomV2.0.0\BioChome\CurvAnalysis\obj\x86\Debug\CurvAnalysis.dll
+F:\work\程杰\BioChomV2.0.0\BioChome\CurvAnalysis\obj\x86\Debug\CurvAnalysis.pdb
+E:\周浦\work\程杰\BioChomV2.0.0\BioChome\CurvAnalysis\bin\x86\Debug\CurvAnalysis.dll
+E:\周浦\work\程杰\BioChomV2.0.0\BioChome\CurvAnalysis\bin\x86\Debug\CurvAnalysis.pdb
+E:\周浦\work\程杰\BioChomV2.0.0\BioChome\CurvAnalysis\obj\x86\Debug\CurvAnalysis.csprojResolveAssemblyReference.cache
+E:\周浦\work\程杰\BioChomV2.0.0\BioChome\CurvAnalysis\obj\x86\Debug\CurvAnalysis.CurvShow.resources
+E:\周浦\work\程杰\BioChomV2.0.0\BioChome\CurvAnalysis\obj\x86\Debug\CurvAnalysis.csproj.GenerateResource.Cache
+E:\周浦\work\程杰\BioChomV2.0.0\BioChome\CurvAnalysis\obj\x86\Debug\CurvAnalysis.dll
+E:\周浦\work\程杰\BioChomV2.0.0\BioChome\CurvAnalysis\obj\x86\Debug\CurvAnalysis.pdb
