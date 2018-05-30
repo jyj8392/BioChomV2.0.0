@@ -91,11 +91,9 @@
             this.PumpB = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PumpC = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PumpD = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.GradCurv = new Pump.GradCurvShow();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel6 = new System.Windows.Forms.Panel();
-            this.PumpPressureShow = new Pump.PumpPressureShow();
             this.panel5 = new System.Windows.Forms.Panel();
             this.PumpMaxPressure_Label = new System.Windows.Forms.Label();
             this.PumpMinPressure_Label = new System.Windows.Forms.Label();
@@ -106,6 +104,8 @@
             this.PumpPressure_ToolBar = new System.Windows.Forms.ToolStrip();
             this.PumpNo_ComBox = new System.Windows.Forms.ToolStripComboBox();
             this.PumpSet_Download = new System.Windows.Forms.ToolStripButton();
+            this.GradCurv = new Pump.GradCurvShow();
+            this.PumpPressureShow = new Pump.PumpPressureShow();
             this.GradProgram_ToolBar.SuspendLayout();
             this.panel3.SuspendLayout();
             this.ConstantProgram_ToolBar.SuspendLayout();
@@ -781,16 +781,6 @@
             this.PumpD.Name = "PumpD";
             this.PumpD.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
-            // GradCurv
-            // 
-            this.GradCurv.BackColor = System.Drawing.Color.Transparent;
-            this.GradCurv.Location = new System.Drawing.Point(459, 5);
-            this.GradCurv.Margin = new System.Windows.Forms.Padding(5);
-            this.GradCurv.MinimumSize = new System.Drawing.Size(293, 0);
-            this.GradCurv.Name = "GradCurv";
-            this.GradCurv.Size = new System.Drawing.Size(293, 204);
-            this.GradCurv.TabIndex = 7;
-            // 
             // panel2
             // 
             this.panel2.Controls.Add(this.panel4);
@@ -820,15 +810,6 @@
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(191, 147);
             this.panel6.TabIndex = 1;
-            // 
-            // PumpPressureShow
-            // 
-            this.PumpPressureShow.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.PumpPressureShow.Location = new System.Drawing.Point(0, 0);
-            this.PumpPressureShow.Margin = new System.Windows.Forms.Padding(5);
-            this.PumpPressureShow.Name = "PumpPressureShow";
-            this.PumpPressureShow.Size = new System.Drawing.Size(191, 147);
-            this.PumpPressureShow.TabIndex = 7;
             // 
             // panel5
             // 
@@ -927,6 +908,25 @@
             this.PumpSet_Download.Size = new System.Drawing.Size(24, 25);
             this.PumpSet_Download.Text = "下载";
             this.PumpSet_Download.Click += new System.EventHandler(this.PumpSet_Download_Click);
+            // 
+            // GradCurv
+            // 
+            this.GradCurv.BackColor = System.Drawing.Color.Transparent;
+            this.GradCurv.Location = new System.Drawing.Point(459, 5);
+            this.GradCurv.Margin = new System.Windows.Forms.Padding(5);
+            this.GradCurv.MinimumSize = new System.Drawing.Size(293, 0);
+            this.GradCurv.Name = "GradCurv";
+            this.GradCurv.Size = new System.Drawing.Size(293, 204);
+            this.GradCurv.TabIndex = 7;
+            // 
+            // PumpPressureShow
+            // 
+            this.PumpPressureShow.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.PumpPressureShow.Location = new System.Drawing.Point(0, 0);
+            this.PumpPressureShow.Margin = new System.Windows.Forms.Padding(5);
+            this.PumpPressureShow.Name = "PumpPressureShow";
+            this.PumpPressureShow.Size = new System.Drawing.Size(191, 147);
+            this.PumpPressureShow.TabIndex = 7;
             // 
             // FrmPump
             // 

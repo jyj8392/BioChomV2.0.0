@@ -57,6 +57,8 @@ namespace BioChome
             th_findSerialPort.Start();
             th_overTimeSerialPort = new Thread(OverTimer);
             th_overTimeSerialPort.Start();
+            overtime_count = 0;
+            start_trig_overtime = false;
 
             serialPortList = new string[0];
             equip_DataTable = new DataTable();
@@ -345,6 +347,8 @@ namespace BioChome
                         { 
                             ShowSerialPortLog("泵" + drsConnect[0]["No"].ToString() + "初始化失败，请重试");
                             ((SerialPort)drsConnect[0]["ComPort"]).Dispose();
+                            pumpInstanceA.ClearPumpSerialPort();
+                            pumpInstanceA.PumpInstanceDispose();
                             return;
                         }
                     break;
@@ -357,6 +361,8 @@ namespace BioChome
                         {
                             ShowSerialPortLog("泵" + drsConnect[0]["No"].ToString() + "初始化失败，请重试");
                             ((SerialPort)drsConnect[0]["ComPort"]).Dispose();
+                            pumpInstanceB.ClearPumpSerialPort();
+                            pumpInstanceB.PumpInstanceDispose();
                             return;
                         }
                         break;
@@ -369,6 +375,8 @@ namespace BioChome
                         {
                             ShowSerialPortLog("泵" + drsConnect[0]["No"].ToString() + "初始化失败，请重试");
                             ((SerialPort)drsConnect[0]["ComPort"]).Dispose();
+                            pumpInstanceC.ClearPumpSerialPort();
+                            pumpInstanceC.PumpInstanceDispose();
                             return;
                         }
                         break;
@@ -381,6 +389,8 @@ namespace BioChome
                         {
                             ShowSerialPortLog("泵" + drsConnect[0]["No"].ToString() + "初始化失败，请重试");
                             ((SerialPort)drsConnect[0]["ComPort"]).Dispose();
+                            pumpInstanceD.ClearPumpSerialPort();
+                            pumpInstanceD.PumpInstanceDispose();
                             return;
                         }
                         break;
@@ -765,7 +775,7 @@ namespace BioChome
                     overtime_count = 0;
                     start_trig_overtime = true;
                     //while (!(s = port.ReadExisting()).Contains("\n") && overtime_count < 100) ;
-                    while (!(s.Contains("!") && s.Contains("\n")) && overtime_count < 50)
+                    while (!(s.Contains("!") && s.Contains("\n")) && overtime_count < 5)
                         s += port.ReadExisting();
                     start_trig_overtime = false;
                     //s = s + port.ReadTo("\n") + "\n";
@@ -781,23 +791,22 @@ namespace BioChome
                 {
                     return "";
                 }
-                if (sStr.Substring(0, 1) != sendStr.Substring(0, 1) || sStr.Substring(4, 2) != sendStr.Substring(4, 2) || timeOutCnt >= 100000)
+                if (sStr.Substring(0, 1) != sendStr.Substring(0, 1) || sStr.Substring(4, 2) != sendStr.Substring(4, 2) || overtime_count >= 50)
                     return "";
             }
             return sStr;
         }
 
-        public int overtime_count;
-        public bool start_trig_overtime;
+        private int overtime_count;
+        private bool start_trig_overtime;
         private void OverTimer()
         {
-            overtime_count = 0;
-            start_trig_overtime = false;
             while (true)
             {
+                Thread.Sleep(50);
                 if (start_trig_overtime == true)
                 {
-                    Thread.Sleep(10);
+                    Thread.Sleep(50);
                     overtime_count++;
                     if (overtime_count >= 10000)
                         overtime_count = 0;

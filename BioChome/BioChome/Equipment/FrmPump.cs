@@ -62,6 +62,10 @@ namespace BioChome
                 switch (ret)
                 {
                     case DialogResult.Yes:
+                        if (!isPumpPauseGrad)
+                            PauseGradProgram_Click(null, null);
+                        if (!isPumpPauseConstant)
+                            PauseConstantProgram_Click(null, null);
                         StopGradProgram_Click(null, null);
                         StopConstantProgram_Click(null, null);
                         break;
@@ -843,6 +847,7 @@ namespace BioChome
         }
         private void PauseConstantProgram_Click(object sender, EventArgs e)
         {
+            bool IsCommuOK = true;
             try
             {
                 StartGradProgram.Enabled = false;
@@ -855,29 +860,35 @@ namespace BioChome
                 if (PauseConstantProgram.Checked)
                 {
                     if (FrmLeft.pumpInstanceA != null && FrmLeft.pumpInstanceA.t_SerialPortCommu.pumpPort != null && FrmLeft.pumpInstanceA.t_SerialPortCommu.pumpPort.IsOpen)
-                        FrmLeft.pumpInstanceA.StopPump();
+                        IsCommuOK = FrmLeft.pumpInstanceA.StopPump();
                     if (FrmLeft.pumpInstanceB != null && FrmLeft.pumpInstanceB.t_SerialPortCommu.pumpPort != null && FrmLeft.pumpInstanceB.t_SerialPortCommu.pumpPort.IsOpen)
-                        FrmLeft.pumpInstanceB.StopPump();
+                        IsCommuOK = FrmLeft.pumpInstanceB.StopPump();
                     if (FrmLeft.pumpInstanceC != null && FrmLeft.pumpInstanceC.t_SerialPortCommu.pumpPort != null && FrmLeft.pumpInstanceC.t_SerialPortCommu.pumpPort.IsOpen)
-                        FrmLeft.pumpInstanceC.StopPump();
+                        IsCommuOK = FrmLeft.pumpInstanceC.StopPump();
                     if (FrmLeft.pumpInstanceD != null && FrmLeft.pumpInstanceD.t_SerialPortCommu.pumpPort != null && FrmLeft.pumpInstanceD.t_SerialPortCommu.pumpPort.IsOpen)
-                        FrmLeft.pumpInstanceD.StopPump();
+                        IsCommuOK = FrmLeft.pumpInstanceD.StopPump();
 
-                    ConstantProgram_Label.BackColor = Color.LightGreen;
-                    isPumpPauseConstant = true;
-                    PumpStatus_StatusLabel.Text = "恒流程序已暂停...";
-                    ShowPumpLog("暂停恒流程序");
+                    if (IsCommuOK)
+                    {
+                        ConstantProgram_Label.BackColor = Color.LightGreen;
+                        isPumpPauseConstant = true;
+                        PumpStatus_StatusLabel.Text = "恒流程序已暂停...";
+                        ShowPumpLog("暂停恒流程序");
+                    } else
+                    {
+
+                    }
                 }
                 else
                 {
                     if (FrmLeft.pumpInstanceA != null && FrmLeft.pumpInstanceA.t_SerialPortCommu.pumpPort != null && FrmLeft.pumpInstanceA.t_SerialPortCommu.pumpPort.IsOpen)
-                        FrmLeft.pumpInstanceA.StartPump();
+                        IsCommuOK = FrmLeft.pumpInstanceA.StartPump();
                     if (FrmLeft.pumpInstanceB != null && FrmLeft.pumpInstanceB.t_SerialPortCommu.pumpPort != null && FrmLeft.pumpInstanceB.t_SerialPortCommu.pumpPort.IsOpen)
-                        FrmLeft.pumpInstanceB.StartPump();
+                        IsCommuOK = FrmLeft.pumpInstanceB.StartPump();
                     if (FrmLeft.pumpInstanceC != null && FrmLeft.pumpInstanceC.t_SerialPortCommu.pumpPort != null && FrmLeft.pumpInstanceC.t_SerialPortCommu.pumpPort.IsOpen)
-                        FrmLeft.pumpInstanceC.StartPump();
+                        IsCommuOK = FrmLeft.pumpInstanceC.StartPump();
                     if (FrmLeft.pumpInstanceD != null && FrmLeft.pumpInstanceD.t_SerialPortCommu.pumpPort != null && FrmLeft.pumpInstanceD.t_SerialPortCommu.pumpPort.IsOpen)
-                        FrmLeft.pumpInstanceD.StartPump();
+                        IsCommuOK = FrmLeft.pumpInstanceD.StartPump();
 
                     isPumpPauseConstant = false;
                     ShowPumpLog("启动恒流程序");
@@ -896,6 +907,7 @@ namespace BioChome
         }
         private void StopConstantProgram_Click(object sender, EventArgs e)
         {
+            bool IsCommuOK = true;
             //DialogResult ret;
             //if (runProgram)
             //    ret = MessageBox.Show("是否停止恒流程序?", "泵", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1);
@@ -915,13 +927,13 @@ namespace BioChome
                 PauseConstantProgram.Checked = false;
 
                 if (FrmLeft.pumpInstanceA != null && FrmLeft.pumpInstanceA.t_SerialPortCommu.pumpPort != null && FrmLeft.pumpInstanceA.t_SerialPortCommu.pumpPort.IsOpen)
-                    FrmLeft.pumpInstanceA.StopPump();
+                    IsCommuOK = FrmLeft.pumpInstanceA.StopPump();
                 if (FrmLeft.pumpInstanceB != null && FrmLeft.pumpInstanceB.t_SerialPortCommu.pumpPort != null && FrmLeft.pumpInstanceB.t_SerialPortCommu.pumpPort.IsOpen)
-                    FrmLeft.pumpInstanceB.StopPump();
+                    IsCommuOK = FrmLeft.pumpInstanceB.StopPump();
                 if (FrmLeft.pumpInstanceC != null && FrmLeft.pumpInstanceC.t_SerialPortCommu.pumpPort != null && FrmLeft.pumpInstanceC.t_SerialPortCommu.pumpPort.IsOpen)
-                    FrmLeft.pumpInstanceC.StopPump();
+                    IsCommuOK = FrmLeft.pumpInstanceC.StopPump();
                 if (FrmLeft.pumpInstanceD != null && FrmLeft.pumpInstanceD.t_SerialPortCommu.pumpPort != null && FrmLeft.pumpInstanceD.t_SerialPortCommu.pumpPort.IsOpen)
-                    FrmLeft.pumpInstanceD.StopPump();
+                    IsCommuOK = FrmLeft.pumpInstanceD.StopPump();
                 isPumpRunConstant = false;
                 isPumpPauseConstant = false;
                 ShowPumpLog("停止恒流程序");

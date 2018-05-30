@@ -62,8 +62,17 @@ namespace Pump
         public string revStr = "";
         private Thread th_recvFromPumpSerialPort;
         private Thread th_sendToPumpSerialPort;
+        private Thread th_overTimeSerialPort;
         public bool InitialPump(char pumpType, string no)
         {
+            if (th_overTimeSerialPort == null)
+            {
+                th_overTimeSerialPort = new Thread(OverTimer);
+                th_overTimeSerialPort.Start();
+                overtime_count = 0;
+                start_trig_overtime1 = false;
+            }
+
             t_PumpInfo = new PumpPara();
             t_PumpInfo.pumpType = pumpType.ToString();
             t_PumpInfo.no = no;
@@ -95,6 +104,8 @@ namespace Pump
             th_recvFromPumpSerialPort.Start();
             th_sendToPumpSerialPort = new Thread(SetFlow);
             th_sendToPumpSerialPort.Start();
+
+
             return true;
         }
 
@@ -107,6 +118,8 @@ namespace Pump
                     th_recvFromPumpSerialPort.Abort();
                 if (th_sendToPumpSerialPort != null && th_sendToPumpSerialPort.IsAlive)
                     th_sendToPumpSerialPort.Abort();
+                if (th_overTimeSerialPort != null && th_overTimeSerialPort.IsAlive)
+                    th_overTimeSerialPort.Abort();
             }
             catch
             {
@@ -392,20 +405,22 @@ namespace Pump
         private bool WaitReceive(SerialPort port)
         {
             string s = string.Empty;
-            int timeOutCnt = 0;
-            do
+
+            try
             {
-                try
-                {
-                    s = port.ReadTo("#");
-                    return true;
-                }
-                catch
-                {
-                    timeOutCnt++;
-                }
-            } while (timeOutCnt < 5);
-            return false;
+                //s = port.ReadTo("#");
+                overtime_count = 0;
+                start_trig_overtime1 = true;
+                while (!(s.Contains("#")) && overtime_count < 25) {s += port.ReadExisting();}
+                start_trig_overtime1 = false;
+                if (overtime_count >= 25)
+                    return false;
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
         }
         private bool WaitTautoReceive(SerialPort port)
         {
@@ -426,6 +441,23 @@ namespace Pump
             return false;
         }
         /*******************************************************************************/
+        private int overtime_count;
+        private bool start_trig_overtime1;
+        private void OverTimer()
+        {
+            while (true)
+            {
+                Thread.Sleep(10);
+                if (start_trig_overtime1 == true)
+                {
+                    Thread.Sleep(10);
+                    overtime_count++;
+                    if (overtime_count >= 10000)
+                        overtime_count = 0;
+                }
+            }
+        }
+
     }
 
 
