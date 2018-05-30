@@ -19,6 +19,10 @@
                 {
                     th_findSerialPort.Abort();
                 }
+                if (th_overTimeSerialPort != null && th_overTimeSerialPort.IsAlive)
+                {
+                    th_overTimeSerialPort.Abort();
+                }
                 components.Dispose();
             }
             base.Dispose(disposing);

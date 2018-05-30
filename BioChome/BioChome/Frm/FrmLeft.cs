@@ -49,10 +49,14 @@ namespace BioChome
         }
 
         private Thread th_findSerialPort;
+        private Thread th_overTimeSerialPort;
+
         private void FrmLeft_Load(object sender, EventArgs e)
         {
             th_findSerialPort = new Thread(FindSerialPort);
             th_findSerialPort.Start();
+            th_overTimeSerialPort = new Thread(OverTimer);
+            th_overTimeSerialPort.Start();
 
             serialPortList = new string[0];
             equip_DataTable = new DataTable();
@@ -132,6 +136,8 @@ namespace BioChome
                     continue;
             }
             if (findingPort.IsOpen) findingPort.Dispose();
+
+
 
             e.Cancel = true;
             this.Hide();
@@ -647,6 +653,7 @@ namespace BioChome
             //}));
         }
 
+
         private bool EquipHandShake(SerialPort port)
         {
             int overTime = 0;
@@ -686,6 +693,7 @@ namespace BioChome
                     return false;
                 }
             }
+            Thread.Sleep(100);
             string sendStr2 = "!" + GetEquipID(retStr1) + "003      ";
             port.Write(sendStr2 + GetCRC(sendStr2) + "\n");
             retStr2 = WaitReceive(port, sendStr2);
@@ -725,6 +733,8 @@ namespace BioChome
         private string WaitReceive(SerialPort port, string sendStr)
         {
             string s = string.Empty;
+            string sStr = string.Empty;
+
             int timeOutCnt = 0;
             if (sendStr == "")
             {
@@ -752,20 +762,47 @@ namespace BioChome
             {
                 try
                 {
-                    do
-                    {
-                        s = port.ReadTo("\n");
-                        if (s == "") return "";
-                        timeOutCnt++;
-                    } while (s.Substring(0, 1) != sendStr.Substring(0, 1) || s.Substring(4, 2) != sendStr.Substring(4, 2) && timeOutCnt < 10);
+                    overtime_count = 0;
+                    start_trig_overtime = true;
+                    //while (!(s = port.ReadExisting()).Contains("\n") && overtime_count < 100) ;
+                    while (!(s.Contains("!") && s.Contains("\n")) && overtime_count < 50)
+                        s += port.ReadExisting();
+                    start_trig_overtime = false;
+                    //s = s + port.ReadTo("\n") + "\n";
+                    sStr = s.Substring(s.LastIndexOf('!'), s.LastIndexOf('\n') + 1);
+                    //do
+                    //{
+                    //    //s = port.ReadTo("\n");
+                    //    if (s == "") return "";
+                    //    //timeOutCnt++;
+                    //} while (s.Substring(0, 1) != sendStr.Substring(0, 1) || s.Substring(4, 2) != sendStr.Substring(4, 2) && timeOutCnt < 50);
                 }
                 catch
                 {
                     return "";
                 }
-                if (timeOutCnt >= 10) return "";
+                if (sStr.Substring(0, 1) != sendStr.Substring(0, 1) || sStr.Substring(4, 2) != sendStr.Substring(4, 2) || timeOutCnt >= 100000)
+                    return "";
             }
-            return s;
+            return sStr;
+        }
+
+        public int overtime_count;
+        public bool start_trig_overtime;
+        private void OverTimer()
+        {
+            overtime_count = 0;
+            start_trig_overtime = false;
+            while (true)
+            {
+                if (start_trig_overtime == true)
+                {
+                    Thread.Sleep(10);
+                    overtime_count++;
+                    if (overtime_count >= 10000)
+                        overtime_count = 0;
+                }
+            }            
         }
 
         private string GetCRC(string s)

@@ -205,17 +205,17 @@
   <data name="GradProgram_Del.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         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
-        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
+        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
 </value>
   </data>
   <data name="PumpD_Color.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
