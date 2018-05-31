@@ -11,7 +11,7 @@ using System.Xml;
 
 namespace BioChome
 {
-    public partial class FrmPump : DockContent
+        public partial class FrmPump : DockContent
     {
         public FrmPump()
         {            
@@ -75,19 +75,9 @@ namespace BioChome
                 }
             }
 
-
             SavePumpMethodConfig(PumpMethodXMLPath);
 
             PumpPressureShow.PressureThreadDispose();
-
-            if (FrmLeft.pumpInstanceA != null)
-                FrmLeft.pumpInstanceA.PumpInstanceDispose();
-            if (FrmLeft.pumpInstanceB != null)
-                FrmLeft.pumpInstanceB.PumpInstanceDispose();
-            if (FrmLeft.pumpInstanceC != null)
-                FrmLeft.pumpInstanceC.PumpInstanceDispose();
-            if (FrmLeft.pumpInstanceD != null)
-                FrmLeft.pumpInstanceD.PumpInstanceDispose();
 
             //this.Hide();
             //e.Cancel = true;
@@ -125,7 +115,8 @@ namespace BioChome
         {
 
             if ((isPumpRunGrad || isPumpRunConstant) && (!isPumpPauseConstant && !isPumpPauseGrad))
-                pumpRunTime = pumpRunTime.Add(new TimeSpan(0,0,0,0,PumpInfo_Fresher.Interval));
+                pumpRunTime = pumpRunTime.Add(new TimeSpan(0, 0, 0, 0, PumpInfo_Fresher.Interval));
+            //pumpRunTime = pumpRunTime.Add(new TimeSpan(0, 0, 10, 0, 0));
 
 
             try
@@ -654,6 +645,8 @@ namespace BioChome
                         StartConstantProgram.Enabled = false;
                         PauseConstantProgram.Enabled = false;
                         StopConstantProgram.Enabled = false;
+
+                        DisableStandby();   //禁止休眠功能
                     }
                     else
                     {
@@ -751,6 +744,8 @@ namespace BioChome
             PauseConstantProgram.Enabled = false;
             StopConstantProgram.Enabled = false;
             PauseConstantProgram.Checked = false;
+
+            EnableStandby();    //恢复休眠功能
             //}
         }
 
@@ -830,6 +825,8 @@ namespace BioChome
                             StartConstantProgram.Enabled = false;
                             PauseConstantProgram.Enabled = true;
                             StopConstantProgram.Enabled = true;
+
+                            DisableStandby();   //禁止休眠功能
                         }
                         else
                         {
@@ -946,8 +943,11 @@ namespace BioChome
                 PauseConstantProgram.Enabled = false;
                 StopConstantProgram.Enabled = false;
                 PauseConstantProgram.Checked = false;
+
+                EnableStandby();    //恢复休眠功能
                 //}
-            }catch
+            }
+            catch
             {
                 return;
             }

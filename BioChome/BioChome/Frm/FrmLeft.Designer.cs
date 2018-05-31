@@ -1,4 +1,7 @@
-﻿namespace BioChome
+﻿//using System.Data;
+//using System.IO.Ports;
+
+namespace BioChome
 {
     partial class FrmLeft
     {
@@ -15,14 +18,33 @@
         {
             if (disposing && (components != null))
             {
-                if (th_findSerialPort != null && th_findSerialPort.IsAlive)
-                {
-                    th_findSerialPort.Abort();
-                }
-                if (th_overTimeSerialPort != null && th_overTimeSerialPort.IsAlive)
-                {
-                    th_overTimeSerialPort.Abort();
-                }
+                //DataRow[] d = equip_DataTable.Select();
+                //foreach (DataRow d0 in d)
+                //{
+                //    if (((SerialPort)d0["ComPort"]).IsOpen)
+                //        ((SerialPort)d0["ComPort"]).Dispose();
+                //    else
+                //        continue;
+                //}
+                //if (findingPort.IsOpen) findingPort.Dispose();
+
+                //if (pumpInstanceA != null)
+                //    pumpInstanceA.PumpInstanceDispose();
+                //if (pumpInstanceB != null)
+                //    pumpInstanceB.PumpInstanceDispose();
+                //if (pumpInstanceC != null)
+                //    pumpInstanceC.PumpInstanceDispose();
+                //if (pumpInstanceD != null)
+                //    pumpInstanceD.PumpInstanceDispose();
+
+                //if (th_findSerialPort != null && th_findSerialPort.IsAlive)
+                //{
+                //    th_findSerialPort.Abort();
+                //}
+                //if (th_overTimeSerialPort != null && th_overTimeSerialPort.IsAlive)
+                //{
+                //    th_overTimeSerialPort.Abort();
+                //}
                 components.Dispose();
             }
             base.Dispose(disposing);
@@ -63,23 +85,24 @@
             // 
             // AddEquip_Menu
             // 
+            this.AddEquip_Menu.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.AddEquip_Menu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripMenuItem2,
             this.toolStripMenuItem3});
             this.AddEquip_Menu.Name = "contextMenuStrip1";
-            this.AddEquip_Menu.Size = new System.Drawing.Size(84, 48);
+            this.AddEquip_Menu.Size = new System.Drawing.Size(88, 52);
             this.AddEquip_Menu.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.AddEquip_Menu_ItemClicked);
             // 
             // toolStripMenuItem2
             // 
             this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(83, 22);
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(87, 24);
             this.toolStripMenuItem2.Text = "1";
             // 
             // toolStripMenuItem3
             // 
             this.toolStripMenuItem3.Name = "toolStripMenuItem3";
-            this.toolStripMenuItem3.Size = new System.Drawing.Size(83, 22);
+            this.toolStripMenuItem3.Size = new System.Drawing.Size(87, 24);
             this.toolStripMenuItem3.Text = "2";
             // 
             // equipList
@@ -89,6 +112,7 @@
             this.equipList.Dock = System.Windows.Forms.DockStyle.Fill;
             this.equipList.HotTracking = true;
             this.equipList.Location = new System.Drawing.Point(0, 0);
+            this.equipList.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.equipList.Name = "equipList";
             treeNode1.ContextMenuStrip = this.AddEquip_Menu;
             treeNode1.ForeColor = System.Drawing.Color.DarkGray;
@@ -126,7 +150,7 @@
             treeNode7,
             treeNode8});
             this.equipList.ShowNodeToolTips = true;
-            this.equipList.Size = new System.Drawing.Size(120, 369);
+            this.equipList.Size = new System.Drawing.Size(192, 461);
             this.equipList.TabIndex = 7;
             this.equipList.NodeMouseClick += new System.Windows.Forms.TreeNodeMouseClickEventHandler(this.equipList_NodeMouseClick);
             this.equipList.DoubleClick += new System.EventHandler(this.equipList_DoubleClick);
@@ -134,24 +158,26 @@
             // 
             // RefreshEquipList_Menu
             // 
+            this.RefreshEquipList_Menu.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.RefreshEquipList_Menu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.刷新ToolStripMenuItem});
             this.RefreshEquipList_Menu.Name = "RefreshEquipList_Menu";
-            this.RefreshEquipList_Menu.Size = new System.Drawing.Size(101, 26);
+            this.RefreshEquipList_Menu.Size = new System.Drawing.Size(109, 28);
             this.RefreshEquipList_Menu.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.RefreshEquipList_Menu_ItemClicked);
             // 
             // 刷新ToolStripMenuItem
             // 
             this.刷新ToolStripMenuItem.Name = "刷新ToolStripMenuItem";
-            this.刷新ToolStripMenuItem.Size = new System.Drawing.Size(100, 22);
+            this.刷新ToolStripMenuItem.Size = new System.Drawing.Size(108, 24);
             this.刷新ToolStripMenuItem.Text = "刷新";
             // 
             // FindSerialPort_Progress
             // 
             this.FindSerialPort_Progress.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.FindSerialPort_Progress.Location = new System.Drawing.Point(0, 348);
+            this.FindSerialPort_Progress.Location = new System.Drawing.Point(0, 435);
+            this.FindSerialPort_Progress.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.FindSerialPort_Progress.Name = "FindSerialPort_Progress";
-            this.FindSerialPort_Progress.Size = new System.Drawing.Size(120, 21);
+            this.FindSerialPort_Progress.Size = new System.Drawing.Size(192, 26);
             this.FindSerialPort_Progress.TabIndex = 8;
             this.FindSerialPort_Progress.Visible = false;
             // 
@@ -159,21 +185,23 @@
             // 
             this.FindSerialPort_Label.AutoSize = true;
             this.FindSerialPort_Label.BackColor = System.Drawing.SystemColors.Window;
-            this.FindSerialPort_Label.Location = new System.Drawing.Point(-2, 333);
+            this.FindSerialPort_Label.Location = new System.Drawing.Point(-3, 416);
+            this.FindSerialPort_Label.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.FindSerialPort_Label.Name = "FindSerialPort_Label";
-            this.FindSerialPort_Label.Size = new System.Drawing.Size(95, 12);
+            this.FindSerialPort_Label.Size = new System.Drawing.Size(121, 15);
             this.FindSerialPort_Label.TabIndex = 9;
             this.FindSerialPort_Label.Text = "正在扫描设备...";
             this.FindSerialPort_Label.Visible = false;
             // 
             // FrmLeft
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(120, 369);
+            this.ClientSize = new System.Drawing.Size(192, 461);
             this.Controls.Add(this.FindSerialPort_Label);
             this.Controls.Add(this.FindSerialPort_Progress);
             this.Controls.Add(this.equipList);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "FrmLeft";
             this.TabText = "设备列表";
             this.Text = "FrmLeft";

@@ -187,6 +187,8 @@ namespace BioChome
                 //AppConfig.frmUV.Dispose();
                 //为了下次打开程序时，浮动窗体的显示位置和关闭时一致，
                 Dock_Main.SaveAsXml(this.m_DockPath);
+                if (AppConfig.frmLeft != null || AppConfig.frmLeft.IsActivated)
+                    AppConfig.frmLeft.Close();
             }
             catch (Exception ex)
             {
