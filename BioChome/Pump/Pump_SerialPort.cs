@@ -95,7 +95,7 @@ namespace Pump
                 t_PumpInfo.setMinPressure = 0;
 
                 if (!PumpSerialPortSendData(0, 18, 20)) return false;
-                if (!PumpSerialPortSendData(0, 13, 4200)) return false;
+                //if (!PumpSerialPortSendData(0, 13, 4200)) return false;
                 if (!PumpSerialPortSendData(0, 14, 0)) return false;
                 if (!PumpSerialPortSendData(1, 19, pumpType - 'A' + 1)) return false;
             }
