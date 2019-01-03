@@ -137,7 +137,9 @@ namespace BioChome
                 else
                     continue;
             }
-            if (findingPort.IsOpen) findingPort.Dispose();
+            if (findingPort != null)
+                if (findingPort.IsOpen)
+                    findingPort.Dispose();
 
             if (pumpInstanceA != null)
                 pumpInstanceA.PumpInstanceDispose();
@@ -148,14 +150,13 @@ namespace BioChome
             if (pumpInstanceD != null)
                 pumpInstanceD.PumpInstanceDispose();
 
-            if (th_findSerialPort != null && th_findSerialPort.IsAlive)
-            {
-                th_findSerialPort.Abort();
-            }
-            if (th_overTimeSerialPort != null && th_overTimeSerialPort.IsAlive)
-            {
-                th_overTimeSerialPort.Abort();
-            }
+            if (th_findSerialPort != null)
+                if (th_findSerialPort.IsAlive)
+                    th_findSerialPort.Abort();
+
+            if (th_overTimeSerialPort != null)
+                if (th_overTimeSerialPort.IsAlive)
+                    th_overTimeSerialPort.Abort();
 
             e.Cancel = true;
             this.Hide();

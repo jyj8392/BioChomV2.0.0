@@ -123,6 +123,24 @@
   <metadata name="UVToolBar_Main.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
+  <metadata name="ConstantProgam_ToolBar.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>144, 56</value>
+  </metadata>
+  <metadata name="UVMethod_List.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>167, 17</value>
+  </metadata>
+  <metadata name="UVStatusBar_Analysis.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>599, 17</value>
+  </metadata>
+  <metadata name="UVToolBar_Analysis.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>306, 17</value>
+  </metadata>
+  <metadata name="UVStatusBar_Main.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>474, 17</value>
+  </metadata>
+  <metadata name="UVToolBar_Main.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="Set_UVSpectrum_Xmax.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -250,23 +268,23 @@
         iVBORw0KGgoAAAANSUhEUgAAABUAAAAVCAYAAACpF6WWAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
         YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAHiSURBVDhPYyAGaIWsFPJNqvj/+R+32P//DIxQYcqAXsxG
         RZChNx/LX3r2TkIeKkwcAGmcv8XvwL9/TDFQITCQD9qhAZK790L2/8+frDpQYQad0C0xIPGXH0UboELY
-        AUjR1uPWXy7cUqmACoFBSW9hYO3sbFcol8E0flUFSO2526qfoUL4AUjx7XsyueUd5fwgNjr2yJ3IDqL3
+        AUjRlmNWXy7cUqmACoFBSW9hYO3sbFcol8E0flUFSO3Z2yqfoUL4AUjx7XsyueUd5fwgNjr2yJ3IDqL3
         nzPdCNVCGIT09nLWT0vSQTcMGbvmzFLsmJnGD9WCH9x9KikXXV/PB9Mc2nn4f2DrURQMk9MIWCcM1YYJ
-        YIpWH/B8u+2YRR2MH9R5+r9/434g3gPHAc0H/4d0HYcbbJ6wVBXGBuHbjxXuQY1FAJikV+OZ/4FNe4EG
-        oePd/wNbjvz3bdj3DaYWqhU3gCkM7jjy378Bm6FA3LT/f0DjgX8kGwoKO4iXsRm6779v44FfpBvadgxo
-        AG5DA5rIcGlQ+3GgAdgNDWg6CIywQ2B1RBnqnjVFG6Y4sOMUMFx3Aw2CxT6QDQxnUKqAqfHKmkJcWeCa
+        YIpW7/d8u+2YRR2MH9R5+r9/434g3gPHAc0H/4d0HYcbbJ6wVBXGBuHbjxXuQY1FAJikV+OZ/4FNe4EG
+        oePd/wNbjvz3qd/7DaYWqhU3gCkM7jjy378Bm6FA3LT/f0DD/n8kGwoKO4iXsRm6779Pw/5fpBvadgxo
+        AG5DAxrJcGlQ+3GgAdgNDWg6CIywQ2B1RBnqnjVFG6Y4sOMUMFx3Aw2CxT6QDQxnUKqAqfHKmkJcWeCa
         OdUNYfBJcFCA02jbcbBFMDnXrCkGUC2EgXHaTFbXnEmeMM3YsFv6JDOoctKAR+ZUPWwGAi1UhCoZJMAt
-        b7YxNpe6F8wwgioZRMAze5YasitBfKgUDsDAAADH+7a7vtANDwAAAABJRU5ErkJggg==
+        b7YxNpe6F8wwgioZRMAze5YasitBfKgUDsDAAACCCbarS+qQpAAAAABJRU5ErkJggg==
 </value>
   </data>
   <data name="SetUVCurvZero.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABUAAAAVCAYAAACpF6WWAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAD6SURBVDhPzZJdC4IwFIb9feqCbqK6KPpYEAVhEaSZldpd
-        dFs/1os8eo4mzjkTogfOxd7tPJtz2k/Qp4eobaEqR7SoaaEqZbq/RZNdUN5JgZJ0vAurd1KA+nqrS94L
-        gTGzo7X3SCYZPymLSQiFUR7iMEGfOUpSoRAoBTFGfNKRFUrF8GXQa4gOIJJCJpPCPBVGRZpKa4VAEynJ
-        GK+58yop48dCTsL++iwXAuliO1to4g/AYQIJu0uvXkhAw3DjJ41Q1vWVNVPWWbjqQgKkg01QOCUJzbna
-        u5Wy9Z/ZqeE9Yvw93LlnQiiM2/EpZNxtXqK7/5R+W6j6ezTtDUK3SY96QQPuAAAAAElFTkSuQmCC
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAD6SURBVDhPzZJNC4JAEIb9e+oGnaI6FGkbRIKYBGn2pd2i
+        a/1ZDzk24weuuiZED8xh3915dl1X+QmqsY/7FqpyRIu6Fqo+GLtbvHDD6k4SVKRzN6rfSQLqG23OeS8E
+        munF1umRTjJ+lBaTEAqjPMRhimr6UlKhEKgECVpy0pkTNYrhy6BXEx1AJIWsSQrzVBiV6SptFQJdpCRj
+        vOXO66SMH0o5CcdW4dnU8VnsZQt1/AE4TCHhcH1qFxLQMLWvaSOUc3llzZQNVoG8kADpxA5LpyShvpR7
+        t41sr8/s1PAeMf4e7t8zIRTG/SgKGQ+6l+jui9JvC1V/j6K8AQldSPWKzUZYAAAAAElFTkSuQmCC
 </value>
   </data>
   <metadata name="UVMethod_List.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">

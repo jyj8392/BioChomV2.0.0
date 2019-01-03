@@ -66,7 +66,7 @@
             this.Dock_Main.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.World);
             this.Dock_Main.Location = new System.Drawing.Point(0, 25);
             this.Dock_Main.Name = "Dock_Main";
-            this.Dock_Main.Size = new System.Drawing.Size(1264, 857);
+            this.Dock_Main.Size = new System.Drawing.Size(1264, 724);
             this.Dock_Main.TabIndex = 1;
             // 
             // Menu_Main
@@ -243,7 +243,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1264, 882);
+            this.ClientSize = new System.Drawing.Size(1264, 749);
             this.Controls.Add(this.DogSerialNo);
             this.Controls.Add(this.Dock_Main);
             this.Controls.Add(this.Status_Main);
@@ -251,7 +251,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.Menu_Main;
-            this.MinimumSize = new System.Drawing.Size(1278, 858);
+            this.MinimumSize = new System.Drawing.Size(1278, 766);
             this.Name = "FrmMain";
             this.Text = "色谱工作站 V2.0";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FrmMain_FormClosing);

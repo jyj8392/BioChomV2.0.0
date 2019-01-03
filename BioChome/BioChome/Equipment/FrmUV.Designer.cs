@@ -446,7 +446,7 @@
             this.UVTab_Set.Location = new System.Drawing.Point(4, 22);
             this.UVTab_Set.Name = "UVTab_Set";
             this.UVTab_Set.Padding = new System.Windows.Forms.Padding(3);
-            this.UVTab_Set.Size = new System.Drawing.Size(726, 470);
+            this.UVTab_Set.Size = new System.Drawing.Size(654, 364);
             this.UVTab_Set.TabIndex = 1;
             this.UVTab_Set.Text = "设置";
             this.UVTab_Set.UseVisualStyleBackColor = true;
@@ -475,7 +475,7 @@
             this.UVSet_Pannel.Dock = System.Windows.Forms.DockStyle.Top;
             this.UVSet_Pannel.Location = new System.Drawing.Point(3, 3);
             this.UVSet_Pannel.Name = "UVSet_Pannel";
-            this.UVSet_Pannel.Size = new System.Drawing.Size(442, 147);
+            this.UVSet_Pannel.Size = new System.Drawing.Size(370, 147);
             this.UVSet_Pannel.TabIndex = 4;
             // 
             // UVMaxTimeUnit_Label
@@ -571,7 +571,7 @@
             this.SetUVCurvZero});
             this.ConstantProgam_ToolBar.Location = new System.Drawing.Point(0, 0);
             this.ConstantProgam_ToolBar.Name = "ConstantProgam_ToolBar";
-            this.ConstantProgam_ToolBar.Size = new System.Drawing.Size(442, 25);
+            this.ConstantProgam_ToolBar.Size = new System.Drawing.Size(370, 25);
             this.ConstantProgam_ToolBar.TabIndex = 17;
             this.ConstantProgam_ToolBar.Text = "toolStrip1";
             // 
@@ -711,7 +711,7 @@
             this.CurvAnalysisSet_GroupBox.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.CurvAnalysisSet_GroupBox.Location = new System.Drawing.Point(3, 156);
             this.CurvAnalysisSet_GroupBox.Name = "CurvAnalysisSet_GroupBox";
-            this.CurvAnalysisSet_GroupBox.Size = new System.Drawing.Size(442, 311);
+            this.CurvAnalysisSet_GroupBox.Size = new System.Drawing.Size(370, 205);
             this.CurvAnalysisSet_GroupBox.TabIndex = 3;
             this.CurvAnalysisSet_GroupBox.TabStop = false;
             this.CurvAnalysisSet_GroupBox.Text = "图谱分析设置";
@@ -840,9 +840,9 @@
             this.UVMethod_Panel.Controls.Add(this.UVMethod_Browser);
             this.UVMethod_Panel.Controls.Add(this.UVMethod_List);
             this.UVMethod_Panel.Dock = System.Windows.Forms.DockStyle.Right;
-            this.UVMethod_Panel.Location = new System.Drawing.Point(445, 3);
+            this.UVMethod_Panel.Location = new System.Drawing.Point(373, 3);
             this.UVMethod_Panel.Name = "UVMethod_Panel";
-            this.UVMethod_Panel.Size = new System.Drawing.Size(278, 464);
+            this.UVMethod_Panel.Size = new System.Drawing.Size(278, 358);
             this.UVMethod_Panel.TabIndex = 2;
             // 
             // UVMethod_Browser
@@ -852,7 +852,7 @@
             this.UVMethod_Browser.ItemHeight = 12;
             this.UVMethod_Browser.Location = new System.Drawing.Point(0, 25);
             this.UVMethod_Browser.Name = "UVMethod_Browser";
-            this.UVMethod_Browser.Size = new System.Drawing.Size(278, 439);
+            this.UVMethod_Browser.Size = new System.Drawing.Size(278, 333);
             this.UVMethod_Browser.TabIndex = 0;
             this.UVMethod_Browser.DoubleClick += new System.EventHandler(this.UVMethod_Browser_DoubleClick);
             this.UVMethod_Browser.KeyDown += new System.Windows.Forms.KeyEventHandler(this.UVMethod_Browser_KeyDown);
@@ -917,7 +917,7 @@
             this.UVTab_Analysis.Location = new System.Drawing.Point(4, 22);
             this.UVTab_Analysis.Name = "UVTab_Analysis";
             this.UVTab_Analysis.Padding = new System.Windows.Forms.Padding(3);
-            this.UVTab_Analysis.Size = new System.Drawing.Size(726, 470);
+            this.UVTab_Analysis.Size = new System.Drawing.Size(654, 364);
             this.UVTab_Analysis.TabIndex = 2;
             this.UVTab_Analysis.Text = "图谱分析";
             this.UVTab_Analysis.UseVisualStyleBackColor = true;
@@ -928,7 +928,7 @@
             this.UVSpectrum_Analysis.Dock = System.Windows.Forms.DockStyle.Fill;
             this.UVSpectrum_Analysis.Location = new System.Drawing.Point(3, 28);
             this.UVSpectrum_Analysis.Name = "UVSpectrum_Analysis";
-            this.UVSpectrum_Analysis.Size = new System.Drawing.Size(720, 417);
+            this.UVSpectrum_Analysis.Size = new System.Drawing.Size(648, 311);
             this.UVSpectrum_Analysis.TabIndex = 3;
             // 
             // UVStatusBar_Analysis
@@ -936,9 +936,9 @@
             this.UVStatusBar_Analysis.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.UVValue_Analysis,
             this.UVTime_Analysis});
-            this.UVStatusBar_Analysis.Location = new System.Drawing.Point(3, 445);
+            this.UVStatusBar_Analysis.Location = new System.Drawing.Point(3, 339);
             this.UVStatusBar_Analysis.Name = "UVStatusBar_Analysis";
-            this.UVStatusBar_Analysis.Size = new System.Drawing.Size(720, 22);
+            this.UVStatusBar_Analysis.Size = new System.Drawing.Size(648, 22);
             this.UVStatusBar_Analysis.TabIndex = 2;
             this.UVStatusBar_Analysis.Text = "statusStrip1";
             // 
@@ -951,7 +951,7 @@
             // UVTime_Analysis
             // 
             this.UVTime_Analysis.Name = "UVTime_Analysis";
-            this.UVTime_Analysis.Size = new System.Drawing.Size(636, 17);
+            this.UVTime_Analysis.Size = new System.Drawing.Size(564, 17);
             this.UVTime_Analysis.Spring = true;
             this.UVTime_Analysis.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
@@ -980,7 +980,7 @@
             this.toolStripSeparator4});
             this.UVToolBar_Analysis.Location = new System.Drawing.Point(3, 3);
             this.UVToolBar_Analysis.Name = "UVToolBar_Analysis";
-            this.UVToolBar_Analysis.Size = new System.Drawing.Size(720, 25);
+            this.UVToolBar_Analysis.Size = new System.Drawing.Size(648, 25);
             this.UVToolBar_Analysis.TabIndex = 0;
             this.UVToolBar_Analysis.Text = "UVToolBar_Analysis";
             // 
