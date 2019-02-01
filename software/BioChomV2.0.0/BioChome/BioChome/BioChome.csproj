@@ -1,0 +1,293 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{3ED479E8-23D8-4DDF-9856-3D527C212A90}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>BioChome</RootNamespace>
+    <AssemblyName>BioChome</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>1</ApplicationRevision>
+    <ApplicationVersion>2.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+    <DocumentationFile>
+    </DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>934373E0B6FEB2053001C393AE03F4DFC0B74DF4</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>BioChome_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>false</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <TargetZone>LocalIntranet</TargetZone>
+  </PropertyGroup>
+  <PropertyGroup />
+  <PropertyGroup>
+    <SignManifests>false</SignManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>蛋白_200X200.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup />
+  <PropertyGroup />
+  <PropertyGroup>
+    <StartupObject>BioChome.Program</StartupObject>
+  </PropertyGroup>
+  <PropertyGroup />
+  <PropertyGroup>
+    <ApplicationManifest>Properties\app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>false</SignAssembly>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DevComponents.DotNetBar2">
+      <HintPath>..\DotNetBar v10.0.0.3\DevComponents.DotNetBar2.dll</HintPath>
+    </Reference>
+    <Reference Include="Register">
+      <HintPath>..\Register\bin\Debug\Register.dll</HintPath>
+    </Reference>
+    <Reference Include="Report">
+      <HintPath>..\Report\bin\Debug\Report.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WeifenLuo.WinFormsUI.Docking">
+      <HintPath>C:\Windows\SysWOW64\WeifenLuo.WinFormsUI.Docking.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AppConfig.cs" />
+    <Compile Include="Equipment\Dialog\UVLampOpening.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Equipment\Dialog\UVLampOpening.Designer.cs">
+      <DependentUpon>UVLampOpening.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Equipment\FrmPH.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Equipment\FrmPH.Designer.cs">
+      <DependentUpon>FrmPH.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Equipment\Dialog\MethodNewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Equipment\Dialog\MethodNewer.Designer.cs">
+      <DependentUpon>MethodNewer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Method\CollectorMethod.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Method\MethodSnapShot.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Method\PumpMethod.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Method\UVMethod.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm\FrmBottom.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm\FrmBottom.Designer.cs">
+      <DependentUpon>FrmBottom.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Equipment\FrmUV.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Equipment\FrmUV.Designer.cs">
+      <DependentUpon>FrmUV.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Equipment\FrmPump.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Equipment\FrmPump.Designer.cs">
+      <DependentUpon>FrmPump.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm\FrmRight.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm\FrmRight.Designer.cs">
+      <DependentUpon>FrmRight.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm\FrmLeft.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm\FrmLeft.Designer.cs">
+      <DependentUpon>FrmLeft.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmMain.Designer.cs">
+      <DependentUpon>FrmMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Equipment\FrmCollector.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Equipment\FrmCollector.Designer.cs">
+      <DependentUpon>FrmCollector.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Equipment\Dialog\UVLampOpening.resx">
+      <DependentUpon>UVLampOpening.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Equipment\FrmPH.resx">
+      <DependentUpon>FrmPH.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Equipment\Dialog\MethodNewer.resx">
+      <DependentUpon>MethodNewer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm\FrmBottom.resx">
+      <DependentUpon>FrmBottom.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Equipment\FrmUV.resx">
+      <DependentUpon>FrmUV.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Equipment\FrmPump.resx">
+      <DependentUpon>FrmPump.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm\FrmLeft.resx">
+      <DependentUpon>FrmLeft.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmMain.resx">
+      <DependentUpon>FrmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Equipment\FrmCollector.resx">
+      <DependentUpon>FrmCollector.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm\FrmRight.resx">
+      <DependentUpon>FrmRight.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="app.config" />
+    <None Include="BioChome_TemporaryKey.pfx" />
+    <None Include="Properties\app.manifest" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="Office">
+      <Guid>{2DF8D04C-5BFA-101B-BDE5-00AA0044DE52}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>6</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Collector\Collector.csproj">
+      <Project>{0cfe2e89-70a4-4505-95ff-ab8477a3c214}</Project>
+      <Name>Collector</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CurvAnalysis\CurvAnalysis.csproj">
+      <Project>{a10df0d6-b12b-4f6a-a209-b195bee06ea2}</Project>
+      <Name>CurvAnalysis</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PH\PH.csproj">
+      <Project>{43c6ecdd-b688-401e-ab6c-de6fef8284cc}</Project>
+      <Name>PH</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Pump\Pump.csproj">
+      <Project>{38367b8f-f307-498a-bb2a-69e20c102e10}</Project>
+      <Name>Pump</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\UVDetector\UVDetector.csproj">
+      <Project>{bd2cafbb-daab-45b6-8a86-8b6f560c3905}</Project>
+      <Name>UVDetector</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5.2 %28x86 和 x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="蛋白_128X128.ico" />
+    <Content Include="蛋白_200X200.ico" />
+    <Content Include="蛋白_32X32.ico" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
